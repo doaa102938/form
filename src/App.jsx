@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import './App.css'
 import * as yup from "yup"
+// import alert from '../src/assets/images/icon-success-check.svg'
 function App() {
   const [formData, setformData] = useState({
     firstname: "",
@@ -47,7 +48,6 @@ function App() {
     event.preventDefault()
     seterrorsArray([""])
     setformData({ email: "", firstname: "", lastname: "", massage: "", ruleAccpeted: false })
-    // alert("Thanks for completing the form. We'll be in touch soon!");
 
 
   }
@@ -69,6 +69,15 @@ function App() {
 
   return (
     <>
+      {/* <div className='toast hidden'>
+        <div>
+          <img src={alert}></img>
+          <span>Message Sent!</span>
+        </div>
+        <p>Thanks for completing the form.we'll be in touch soon! </p>
+      </div> */}
+
+
       <form onSubmit={handelonsubmit} className='form'>
 
         <div>
