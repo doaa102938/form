@@ -1,0 +1,173 @@
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  gap: 5px;
+  padding: 0 20px;
+  width: 35%;
+  height: 70%;
+
+}
+
+
+.contactus {
+  font-size: 20px;
+  font-weight: 700;
+  color: hsl(187, 24%, 22%);
+}
+
+.name {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+
+}
+
+.title {
+  font-size: 12px;
+  color: hsl(187, 24%, 22%);
+  font-weight: 500;
+}
+
+
+
+.firstandlast input {
+  width: 100%;
+  height: 25px;
+  border: 1px solid hsl(189, 8%, 36%);
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.firstandlast input:hover {
+  border: 1px solid hsl(169, 82%, 27%);
+}
+
+.email {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.email input {
+  width: 100%;
+  height: 25px;
+  border: 1px solid hsl(189, 8%, 36%);
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.email input:hover {
+  border: 1px solid hsl(169, 82%, 27%);
+
+}
+
+.Quarytype {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+
+}
+
+input[type=checkbox] {
+  accent-color: hsl(169, 82%, 27%);
+}
+
+input[type=radio] {
+  accent-color: hsl(169, 82%, 27%);
+}
+
+.border {
+  width: 50%;
+  height: 25px;
+  border: 1px solid hsl(189, 8%, 36%);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 3px 0 3px 5px;
+  margin-top: 10px;
+}
+
+.border:hover {
+  border: 1px solid hsl(169, 82%, 27%);
+  background-color: hsl(148, 38%, 91%);
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+}
+
+.message textarea {
+  height: 50px;
+  border: 1px solid hsl(189, 8%, 36%);
+  border-radius: 5px;
+  margin-top: 10px;
+  resize: none;
+}
+
+.message textarea:hover {
+  border: 1px solid hsl(169, 82%, 27%);
+
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+span {
+  color: hsl(169, 82%, 27%);
+  font-weight: 900;
+}
+
+button {
+  border: none;
+  background-color: hsl(169, 82%, 27%);
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.error {
+  color: hsl(0, 66%, 54%);
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+  .form {
+    width: 50%;
+    height: 95%;
+  }
+
+  .name {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .Quarytype {
+    gap: 0px;
+    flex-direction: column;
+  }
+
+  .border {
+    width: 100%;
+
+  }
+
+  .message textarea {
+    height: 90px;
+
+  }
+}
