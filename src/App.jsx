@@ -75,8 +75,11 @@ function App() {
           <label className='contactus' >Contact Us</label>
         </div>
         <div className='name'>
-          <div className='firstandlast'><label htmlFor="firstname" className='title'>First Name <span>*</span></label>
-            <input type="text" name='firstname' value={formData.firstname} onChange={handelOnchange} id='firstname' />
+          <div className='firstAndError'>
+            <div className='firstandlast'>
+              <label htmlFor="firstname" className='title'>First Name <span>*</span></label>
+              <input type="text" name='firstname' value={formData.firstname} onChange={handelOnchange} id='firstname' />
+            </div>
             {errorsArray.map((error) => {
               if (error.key == "firstname") {
                 return <label className='error'>{error.message}</label>
@@ -84,8 +87,11 @@ function App() {
               else { null }
             })}
           </div>
-          <div className='firstandlast'> <label htmlFor="lastname" className='title'>Last Name <span>*</span></label>
-            <input type="text" name='lastname' value={formData.lastname} onChange={handelOnchange} />
+          <div className='lastAndError'>
+            <div className='firstandlast'>
+              <label htmlFor="lastname" className='title'>Last Name <span>*</span></label>
+              <input type="text" name='lastname' value={formData.lastname} onChange={handelOnchange} />
+            </div>
             {errorsArray.map((error) => {
               if (error.key == "lastname") {
                 return <label className='error'>{error.message}</label>
