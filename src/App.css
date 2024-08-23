@@ -42,6 +42,10 @@
   padding: 0;
 }
 
+.firstandlast input {
+  width: 100%;
+}
+
 .name input:hover,
 .email input:hover {
   border: 1px solid hsl(169, 82%, 27%);
