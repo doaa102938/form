@@ -1,8 +1,8 @@
 
-import { useState } from 'react'
+import { isValidElement, useState } from 'react'
 import './App.css'
 import * as yup from "yup"
-// import alert from '../src/assets/images/icon-success-check.svg'
+import alert from '../src/assets/images/icon-success-check.svg'
 function App() {
   const [formData, setformData] = useState({
     firstname: "",
@@ -24,6 +24,7 @@ function App() {
   //array of errors
   const [errorsArray, seterrorsArray] = useState([])
 
+  const [isToastVisible, setIsToastVisible] = useState(false);
 
 
 
@@ -31,6 +32,7 @@ function App() {
     try {
       const response = await userSchema.validate(formData, { abortEarly: false })
       console.log("Is Valid object", response)
+      return true
     } catch (err) {
       var errors = []
       err.inner.forEach((error) => {
@@ -38,18 +40,21 @@ function App() {
         errors.push({ key: error.path, message: error.message })
       });
       seterrorsArray(errors)
-
+      return false
     }
   }
 
 
-  function handelonsubmit(event) {
-    textValidation()
+  async function handelonsubmit(event) {
     event.preventDefault()
-    seterrorsArray([""])
-    setformData({ email: "", firstname: "", lastname: "", massage: "", ruleAccpeted: false })
 
-
+    const isValid = await textValidation();
+    if (isValid) {
+      seterrorsArray([])
+      setformData({ email: "", firstname: "", lastname: "", massage: "", ruleAccpeted: false })
+      setIsToastVisible(true);
+      setTimeout(() => setIsToastVisible(false), 3000);
+    }
   }
   function handelOnchange(event) {
     const keyname = event.target.name
@@ -69,14 +74,14 @@ function App() {
 
   return (
     <>
-      {/* <div className='toast hidden'>
+
+      <div className={`toast ${isToastVisible ? '' : 'hidden'}`}>
         <div>
           <img src={alert}></img>
-          <span>Message Sent!</span>
+          <label>Message Sent!</label>
         </div>
         <p>Thanks for completing the form.we'll be in touch soon! </p>
-      </div> */}
-
+      </div>
 
       <form onSubmit={handelonsubmit} className='form'>
 
